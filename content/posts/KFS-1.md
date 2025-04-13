@@ -53,3 +53,9 @@ editPost:
 - VGA çipi eski bir standart lakin hala güncel ekran kartlarında desteklenmeye devam ediyor. Bu sebeple bunun için bir driver yazmak çekici bir durum.
 ### VGA Nasıl çalışır?
 - 
+## GDT
+### GDT Nedir?
+- GDT (Global Descriptor Table) bir bellek yönetim tablosudur. Bu tablo, bellek yönetimi için kullanılır.
+### GDT Nasıl çalışır?
+## IDT
+IDT (Interrupt Descriptor Table) bir kesme yönetim tablosudur. Bu tablo, kesme yönetimi için kullanılır.

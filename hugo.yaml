@@ -68,7 +68,7 @@ params:
         url: posts
 
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
+    Title: "MUGUREL"
     Content: Welcome to my blog
 
   socialIcons:

@@ -53,3 +53,7 @@ editPost:
 ## Exploit Chain
 - This means that an attacker can use multiple exploit primitives together to create a more complex exploit.
 ## Zero Day
+- A zero-day vulnerability is a security flaw that is unknown to the vendor and has not been patched. Attackers can exploit these vulnerabilities before the vendor releases a fix, making them particularly dangerous.
+## N-day
+- An N-day vulnerability is a security flaw that has been publicly disclosed and for which a patch is available. Attackers can exploit these vulnerabilities if users do not apply the patch in a timely manner.
+

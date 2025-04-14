@@ -2,8 +2,8 @@
 title: "KFS-1"
 date: 2020-09-15T11:30:03+00:00
 # weight: 1
-# aliases: ["/kfs"]
-tags: ["kfs"]
+# aliases: ["/VKM"]
+tags: ["VKM"]
 author: "mugurel"
 showToc: true
 TocOpen: false
@@ -34,4 +34,9 @@ editPost:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
+
+# What is kernel module?
+- A kernel module is a piece of code that can be loaded into the kernel at runtime, allowing for dynamic extension of the kernel's functionality.
+
+# VKM (Vulnerable Kernel Module)
 

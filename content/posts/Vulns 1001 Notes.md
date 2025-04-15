@@ -56,7 +56,7 @@ editPost:
 - A zero-day vulnerability is a security flaw that is unknown to the vendor and has not been patched. Attackers can exploit these vulnerabilities before the vendor releases a fix, making them particularly dangerous.
 ## N-day
 - An N-day vulnerability is a security flaw that has been publicly disclosed and for which a patch is available. Attackers can exploit these vulnerabilities if users do not apply the patch in a timely manner.
-![Attack Surface](/posts/attack-surface.png)
+![Attack Surface](/content/posts/attack-surface.png)
 ## Attack Surface
 - The attack surface is the totality of all the points in a system that an attacker can use to gain access to the system. This includes all the inputs, outputs, and interfaces that an attacker can use to interact with the system.
 ## Sploity Sens

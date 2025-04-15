@@ -89,4 +89,34 @@ int main(int argc, char *argv[])
 		printf("Buffer: %s\n", buffer);
 }
 ```
+- This code take argument from the command line and copy it to a buffer of size 8. If the user provides an input longer than 8 characters, it will overflow the buffer and overwrite the return address of the function.
+! there shuld be an image here
+
+! there shuld be an image here
+
+# CVE-2021-21574
+## CVE-2021-21571 
+- is a vulnerability in the DELL Bios auto update future. This future reaches out to the internet and downloads a file and its ssl serticate is accept wildcard certificate. This couses an ACID vulnerability. The attacker can create a fake ssl sertificate and the bios will accept it. This couses a buffer overflow in the bios and the attacker can run code in the bios.
+
+## CVE-2021-21574
+- The vulnerability in the https couses some other vulnerabilities.
+
+``` c
+// Pseudocode derived from assembly
+
+idx = 0;
+write_ptr = buf_on_stack; //rbp-0x158
+while(1) {
+    if (idx >= strnlen (hex_ptr, 20000))
+        break;
+    *write_ptr++ = CONVERT_HEX(hex_ptr [idx]) << 8 |
+        CONVERT_HEX(hex_ptr [idx+1]);
+    idx += 2;
+}
+
+if (buf_on_stack != calculated_sha256 ) { if (memcmp(buf_on_stack, calculated_sha256, 32) )
+    retval = EFI_NOT_FOUND
+}
+```
+- The hex_ptr is ACID exit condition if you keep that value bigger than idx you can corrupt the stack.
 

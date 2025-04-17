@@ -63,9 +63,10 @@ int main(int argc, char *argv[])
 }
 ```
 - This code take argument from the command line and copy it to a buffer of size 8. If the user provides an input longer than 8 characters, it will overflow the buffer and overwrite the return address of the function.
-! there shuld be an image here
 
-! there shuld be an image here
+![Example-stack](Example-stack01.png)
+
+![Example-stack-affter-attack](Example-stack02.png)
 
 # CVE-2021-21574
 ## CVE-2021-21571 

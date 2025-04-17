@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Vuln 1001 | MUGUREL</title>
+<meta property="og:title" content="Vuln 1001 | MUGUREL" />
+<meta name="twitter:title" content="Vuln 1001 | MUGUREL" />
+<meta itemprop="name" content="Vuln 1001 | MUGUREL" />
+<meta name="application-name" content="Vuln 1001 | MUGUREL" />
+<meta property="og:site_name" content="Awesome hugo blog" />
+
+<meta name="description" content="Vuln 1001 course notes">
+<meta itemprop="description" content="Vuln 1001 course notes" />
+<meta property="og:description" content="Vuln 1001 course notes" />
+<meta name="twitter:description" content="Vuln 1001 course notes" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/blog/en-gb/posts/vuln-1001/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-04-17T00:00:00Z />
+    <meta property="article:published_time" content=2025-04-17T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/blog/en-gb/posts/vuln-1001/" />
+
+    
+    <meta property="og:article:author" content="Sidharth R" />
+    <meta property="article:author" content="Sidharth R" />
+    <meta name="author" content="Sidharth R" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Vuln 1001",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-04-17",
+        "description": "Vuln 1001 course notes",
+        "wordCount":  608 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-04-17",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "MUGUREL"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.146.4">
+
+    
+    <meta property="og:url" content="http://localhost:1313/blog/en-gb/posts/vuln-1001/">
+  <meta property="og:site_name" content="MUGUREL">
+  <meta property="og:title" content="Vuln 1001">
+  <meta property="og:description" content="Vuln 1001 course notes">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-17T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vuln 1001">
+  <meta name="twitter:description" content="Vuln 1001 course notes">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/blog/en-gb/posts/vuln-1001/">
+    <link href="/blog/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/blog/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/blog/site.webmanifest">
+
+<meta name="msapplication-config" content="/blog/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/blog/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/blog/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/blog/en-gb/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/blog/en-gb/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/blog/en-gb/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/blog/en-gb/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Vuln 1001</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-04-17T00:00:00&#43;00:00" itemprop="datePublished"> 17 Apr 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#acid-atacker-controlled-input-data">ACID (Atacker Controlled Input Data)</a></li>
+    <li><a href="#shellcode">Shellcode</a></li>
+    <li><a href="#exploit-primitives">Exploit Primitives</a>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#exploit-chain">Exploit Chain</a></li>
+    <li><a href="#zero-day">Zero Day</a></li>
+    <li><a href="#n-day">N-day</a></li>
+    <li><a href="#attack-surface">Attack Surface</a></li>
+    <li><a href="#sploity-sens">Sploity Sens</a></li>
+    <li><a href="#words-of-power">Words of Power</a></li>
+    <li><a href="#program-paranoid">Program Paranoid</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#stack-buffer-overflow">Stack Buffer Overflow</a>
+      <ul>
+        <li><a href="#what-is-a-stack-buffer-overflow">What is a stack buffer overflow?</a></li>
+        <li><a href="#common-causes-of-stack-buffer-overflows">Common causes of stack buffer overflows</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#cve-2021-21571">CVE-2021-21571</a></li>
+    <li><a href="#cve-2021-21574-1">CVE-2021-21574</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="01">01</h1>
+<h1 id="vulnerability-types">Vulnerability Types</h1>
+<ul>
+<li>Heap out of bounds</li>
+<li>Use after free</li>
+<li>Taype confusion</li>
+<li>uninitialized use</li>
+</ul>
+<h1 id="terms">Terms</h1>
+<h2 id="acid-atacker-controlled-input-data">ACID (Atacker Controlled Input Data)</h2>
+<ul>
+<li>ACID is a term used to describe the input data that an attacker can control.</li>
+</ul>
+<h2 id="shellcode">Shellcode</h2>
+<ul>
+<li>Shellcode means a piece of code that an attacker wants user to execute.</li>
+</ul>
+<h2 id="exploit-primitives">Exploit Primitives</h2>
+<ul>
+<li>Exploit primitives are the basic building blocks of an exploit. They are the fundamental techniques that an attacker can use to gain control of a system or application.</li>
+</ul>
+<h3 id="example">Example</h3>
+<ul>
+<li>Overite of return adress</li>
+<li>Overite of other local varibales</li>
+<li>Overite of heap data</li>
+</ul>
+<h2 id="exploit-chain">Exploit Chain</h2>
+<ul>
+<li>This means that an attacker can use multiple exploit primitives together to create a more complex exploit.</li>
+</ul>
+<h2 id="zero-day">Zero Day</h2>
+<ul>
+<li>A zero-day vulnerability is a security flaw that is unknown to the vendor and has not been patched. Attackers can exploit these vulnerabilities before the vendor releases a fix, making them particularly dangerous.</li>
+</ul>
+<h2 id="n-day">N-day</h2>
+<ul>
+<li>An N-day vulnerability is a security flaw that has been publicly disclosed and for which a patch is available. Attackers can exploit these vulnerabilities if users do not apply the patch in a timely manner.</li>
+</ul>
+<h2 id="attack-surface">Attack Surface</h2>
+<ul>
+<li>The attack surface is the totality of all the points in a system that an attacker can use to gain access to the system. This includes all the inputs, outputs, and interfaces that an attacker can use to interact with the system.
+<img src="/blog/en-gb/posts/vuln-1001/attack-surface.png" alt="Attack Surface"></li>
+</ul>
+<h2 id="sploity-sens">Sploity Sens</h2>
+<ul>
+<li>Sploity sens is a term used to describe when an vulnerability hunters devolope a 6 sence to detect vulnerabilities. When they see so many vulnerabilities, they start to see patterns and can identify potential vulnerabilities more easily.</li>
+</ul>
+<h2 id="words-of-power">Words of Power</h2>
+<ol>
+<li>Parse</li>
+<li>Decode</li>
+<li>Convert</li>
+<li>Deserialize</li>
+<li>Interpret</li>
+<li>Decompress</li>
+</ol>
+<h2 id="program-paranoid">Program Paranoid</h2>
+<ul>
+<li>If you are not paranoid they ara out the get you.</li>
+</ul>
+<h1 id="02">02</h1>
+<h2 id="stack-buffer-overflow">Stack Buffer Overflow</h2>
+<h3 id="what-is-a-stack-buffer-overflow">What is a stack buffer overflow?</h3>
+<ul>
+<li>A stack buffer overflow is a type of vulnerability that occurs when a program writes more data to a buffer on the stack than it can hold. This can lead to overwriting adjacent memory locations, including the return address of a function, which can allow an attacker to execute arbitrary code.</li>
+</ul>
+<h3 id="common-causes-of-stack-buffer-overflows">Common causes of stack buffer overflows</h3>
+<ul>
+<li>Using unsafe functions like <code>strcpy</code>, <code>strcat</code>, and <code>sprintf</code> that do not check the size of the destination buffer.</li>
+<li>Sequentially data writes with in a loop with an ACID loop condition.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">strcpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// Vulnerable to stack buffer overflow
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Buffer: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li>This code take argument from the command line and copy it to a buffer of size 8. If the user provides an input longer than 8 characters, it will overflow the buffer and overwrite the return address of the function.
+! there shuld be an image here</li>
+</ul>
+<p>! there shuld be an image here</p>
+<h1 id="cve-2021-21574">CVE-2021-21574</h1>
+<h2 id="cve-2021-21571">CVE-2021-21571</h2>
+<ul>
+<li>is a vulnerability in the DELL Bios auto update future. This future reaches out to the internet and downloads a file and its ssl serticate is accept wildcard certificate. This couses an ACID vulnerability. The attacker can create a fake ssl sertificate and the bios will accept it. This couses a buffer overflow in the bios and the attacker can run code in the bios.</li>
+</ul>
+<h2 id="cve-2021-21574-1">CVE-2021-21574</h2>
+<ul>
+<li>The vulnerability in the https couses some other vulnerabilities.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// Pseudocode derived from assembly
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">write_ptr</span> <span class="o">=</span> <span class="n">buf_on_stack</span><span class="p">;</span> <span class="c1">//rbp-0x158
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&gt;=</span> <span class="nf">strnlen</span> <span class="p">(</span><span class="n">hex_ptr</span><span class="p">,</span> <span class="mi">20000</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">write_ptr</span><span class="o">++</span> <span class="o">=</span> <span class="nf">CONVERT_HEX</span><span class="p">(</span><span class="n">hex_ptr</span> <span class="p">[</span><span class="n">idx</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span> <span class="o">|</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">CONVERT_HEX</span><span class="p">(</span><span class="n">hex_ptr</span> <span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">idx</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">buf_on_stack</span> <span class="o">!=</span> <span class="n">calculated_sha256</span> <span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nf">memcmp</span><span class="p">(</span><span class="n">buf_on_stack</span><span class="p">,</span> <span class="n">calculated_sha256</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">retval</span> <span class="o">=</span> <span class="n">EFI_NOT_FOUND</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li>The hex_ptr is ACID exit condition if you keep that value bigger than idx you can corrupt the stack.</li>
+</ul>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/ft-mugurel" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://linkedin.com/in/mtugurel/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Sidharth R.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/blog/js/main.js" ></script>
+
+    
+
+</body>
+</html>

@@ -6,84 +6,100 @@
     <description>Recent content in Posts on MUGUREL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/en-gb/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/en-gb/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Table of content</title>
-      <link>http://localhost:1313/blog/en-gb/posts/table-of-content/</link>
-      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <title>Vuln 1001</title>
+      <link>http://localhost:1313/blog/en-gb/posts/vuln-1001/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/en-gb/posts/table-of-content/</guid>
+      <guid>http://localhost:1313/blog/en-gb/posts/vuln-1001/</guid>
       
-      <description>&lt;h2 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h2&gt;
-&lt;p&gt;This theme supports displaying table of content (ToC) in blog posts.&lt;/p&gt;
-&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-&lt;p&gt;You can manage a ToC with two parameters:&lt;/p&gt;
+      <description>&lt;h1 id=&#34;01&#34;&gt;01&lt;/h1&gt;
+&lt;h1 id=&#34;vulnerability-types&#34;&gt;Vulnerability Types&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;global &lt;code&gt;toc&lt;/code&gt; parameter;&lt;/li&gt;
-&lt;li&gt;post &lt;code&gt;toc&lt;/code&gt; parameter.&lt;/li&gt;
+&lt;li&gt;Heap out of bounds&lt;/li&gt;
+&lt;li&gt;Use after free&lt;/li&gt;
+&lt;li&gt;Taype confusion&lt;/li&gt;
+&lt;li&gt;uninitialized use&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The post &lt;code&gt;toc&lt;/code&gt; parameter has higher priority than the global &lt;code&gt;toc&lt;/code&gt; parameter.&lt;/p&gt;
-&lt;h2 id=&#34;enable-table-of-content-on-all-posts&#34;&gt;Enable table of content on all posts&lt;/h2&gt;
-&lt;p&gt;To enable ToC on all posts (globally) set parameter &lt;code&gt;toc&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in &lt;code&gt;hugo.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;toc&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To disable ToC globally, simply ignore the &lt;code&gt;toc&lt;/code&gt; parameter or set it to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Math Typesetting - use Mathematical notation in blog posts</title>
-      <link>http://localhost:1313/blog/en-gb/posts/math-typesetting/</link>
-      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/en-gb/posts/math-typesetting/</guid>
-      
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using
-&lt;a href=&#34;https://github.com/hugo-sid/hugo-blog-awesome/blob/main/layouts/partials/helpers/katex.html&#34;&gt;third party JavaScript libraries&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/blog/en-gb/posts/markdown-syntax/</link>
-      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/en-gb/posts/markdown-syntax/</guid>
-      
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Rich Content</title>
-      <link>http://localhost:1313/blog/en-gb/posts/rich-content/</link>
-      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/en-gb/posts/rich-content/</guid>
-      
-      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Placeholder Text</title>
-      <link>http://localhost:1313/blog/en-gb/posts/placeholder-text/</link>
-      <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/en-gb/posts/placeholder-text/</guid>
-      
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>http://localhost:1313/blog/en-gb/posts/emoji-support/</link>
-      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/en-gb/posts/emoji-support/</guid>
-      
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+&lt;h1 id=&#34;terms&#34;&gt;Terms&lt;/h1&gt;
+&lt;h2 id=&#34;acid-atacker-controlled-input-data&#34;&gt;ACID (Atacker Controlled Input Data)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ACID is a term used to describe the input data that an attacker can control.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;shellcode&#34;&gt;Shellcode&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Shellcode means a piece of code that an attacker wants user to execute.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;exploit-primitives&#34;&gt;Exploit Primitives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Exploit primitives are the basic building blocks of an exploit. They are the fundamental techniques that an attacker can use to gain control of a system or application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Overite of return adress&lt;/li&gt;
+&lt;li&gt;Overite of other local varibales&lt;/li&gt;
+&lt;li&gt;Overite of heap data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;exploit-chain&#34;&gt;Exploit Chain&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This means that an attacker can use multiple exploit primitives together to create a more complex exploit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;zero-day&#34;&gt;Zero Day&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A zero-day vulnerability is a security flaw that is unknown to the vendor and has not been patched. Attackers can exploit these vulnerabilities before the vendor releases a fix, making them particularly dangerous.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;n-day&#34;&gt;N-day&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An N-day vulnerability is a security flaw that has been publicly disclosed and for which a patch is available. Attackers can exploit these vulnerabilities if users do not apply the patch in a timely manner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;attack-surface&#34;&gt;Attack Surface&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The attack surface is the totality of all the points in a system that an attacker can use to gain access to the system. This includes all the inputs, outputs, and interfaces that an attacker can use to interact with the system.
+&lt;img src=&#34;http://localhost:1313/blog/en-gb/posts/vuln-1001/attack-surface.png&#34; alt=&#34;Attack Surface&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sploity-sens&#34;&gt;Sploity Sens&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Sploity sens is a term used to describe when an vulnerability hunters devolope a 6 sence to detect vulnerabilities. When they see so many vulnerabilities, they start to see patterns and can identify potential vulnerabilities more easily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;words-of-power&#34;&gt;Words of Power&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Parse&lt;/li&gt;
+&lt;li&gt;Decode&lt;/li&gt;
+&lt;li&gt;Convert&lt;/li&gt;
+&lt;li&gt;Deserialize&lt;/li&gt;
+&lt;li&gt;Interpret&lt;/li&gt;
+&lt;li&gt;Decompress&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;program-paranoid&#34;&gt;Program Paranoid&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If you are not paranoid they ara out the get you.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;02&#34;&gt;02&lt;/h1&gt;
+&lt;h2 id=&#34;stack-buffer-overflow&#34;&gt;Stack Buffer Overflow&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-a-stack-buffer-overflow&#34;&gt;What is a stack buffer overflow?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A stack buffer overflow is a type of vulnerability that occurs when a program writes more data to a buffer on the stack than it can hold. This can lead to overwriting adjacent memory locations, including the return address of a function, which can allow an attacker to execute arbitrary code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;common-causes-of-stack-buffer-overflows&#34;&gt;Common causes of stack buffer overflows&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Using unsafe functions like &lt;code&gt;strcpy&lt;/code&gt;, &lt;code&gt;strcat&lt;/code&gt;, and &lt;code&gt;sprintf&lt;/code&gt; that do not check the size of the destination buffer.&lt;/li&gt;
+&lt;li&gt;Sequentially data writes with in a loop with an ACID loop condition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nf&#34;&gt;strcpy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// Vulnerable to stack buffer overflow
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Buffer: %s&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;This code take argument from the command line and copy it to a buffer of size 8. If the user provides an input longer than 8 characters, it will overflow the buffer and overwrite the return address of the function.
+! there shuld be an image here&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;! there shuld be an image here&lt;/p&gt;</description>
       
     </item>
     

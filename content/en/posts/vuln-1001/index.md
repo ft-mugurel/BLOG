@@ -9,20 +9,20 @@ isStarred: true
 # Vulnerability Types
 - Heap out of bounds
 - Use after free
-- Taype confusion
-- uninitialized use 
+- Type confusion
+- Uninitialized use 
 
 # Terms
-## ACID (Atacker Controlled Input Data)
+## ACID (Attacker Controlled Input Data)
 - ACID is a term used to describe the input data that an attacker can control.
 ## Shellcode 
 - Shellcode means a piece of code that an attacker wants user to execute.
 ## Exploit Primitives
 - Exploit primitives are the basic building blocks of an exploit. They are the fundamental techniques that an attacker can use to gain control of a system or application.
 ### Example 
-- Overite of return adress
-- Overite of other local varibales
-- Overite of heap data
+- Overwrite of return address
+- Overwrite of other local variables
+- Overwrite of heap data
 ## Exploit Chain
 - This means that an attacker can use multiple exploit primitives together to create a more complex exploit.
 ## Zero Day
@@ -33,7 +33,7 @@ isStarred: true
 - The attack surface is the totality of all the points in a system that an attacker can use to gain access to the system. This includes all the inputs, outputs, and interfaces that an attacker can use to interact with the system.
 ![Attack Surface](attack-surface.png)
 ## Sploity Sens
-- Sploity sens is a term used to describe when an vulnerability hunters devolope a 6 sence to detect vulnerabilities. When they see so many vulnerabilities, they start to see patterns and can identify potential vulnerabilities more easily.
+- Sploity sens is a term used to describe when an vulnerability hunters develop a 6 sence to detect vulnerabilities. When they see so many vulnerabilities, they start to see patterns and can identify potential vulnerabilities more easily.
 ## Words of Power
 1. Parse
 2. Decode
@@ -62,11 +62,13 @@ int main(int argc, char *argv[])
 		printf("Buffer: %s\n", buffer);
 }
 ```
-- This code take argument from the command line and copy it to a buffer of size 8. If the user provides an input longer than 8 characters, it will overflow the buffer and overwrite the return address of the function.
 
 ![Example-stack](Example-stack01.png)
 
+- This code take argument from the command line and copy it to a buffer of size 8. If the user provides an input longer than 8 characters, it will overflow the buffer and overwrite the return address of the function.
+
 ![Example-stack-affter-attack](Example-stack02.png)
+
 
 # CVE-2021-21574
 ## CVE-2021-21571 
@@ -93,4 +95,18 @@ if (buf_on_stack != calculated_sha256 ) { if (memcmp(buf_on_stack, calculated_sh
 }
 ```
 - The hex_ptr is ACID exit condition if you keep that value bigger than idx you can corrupt the stack.
+## CVE-2018-9312
+- The modern cars continuously get more relays more on the software and this causes them to be vulnerable to attacks. 
+-  Some of this interfaces local (USB and ODB PORTS) and some of them are remote (INTERNET connections). 
+- The ODB PORT is used to connect the car to a computer for diagnostics. This port is used by the car manufacturers to update the car's software and to diagnose problems with the car.
+- In this case the NBT head unit has a usb and the vunerability is in the NBT head unit.
 
+![BMW-vuln-code](BMW-vuln-code.png)
+
+The file name copied by sprintf and s printf looks for null byte the buffer size is 1024 an you can exploit by make the file name bigger than 1024 bytes.
+
+## CVE-2018-9318
+
+![BMW-vuln-code](BMW-vuln-code2.png)
+- In this case the care get update by connecting to the internet its expecting an signature but when checking the signature it couses ACID exit condition and ACID data.
+- The car uses RTOS and there is no stack canary protection.

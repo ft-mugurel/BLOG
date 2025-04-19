@@ -3,7 +3,7 @@ title: KFS
 date: 2025-04-17
 author: MUGUREl
 description: Vuln 1001 course notes
-isStarred: true
+isStarred: false
 ---
 # KFS-1
 ## KFS Nedir?

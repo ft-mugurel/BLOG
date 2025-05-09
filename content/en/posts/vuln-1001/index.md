@@ -1,6 +1,6 @@
 ---
 title: "Vuln 1001"
-date: 2025-04-17
+date: 2025-05-06
 author: MUGUREl 
 description: 'Vuln 1001 course notes' 
 isStarred: true
@@ -13,7 +13,7 @@ isStarred: true
 - Uninitialized use 
 
 ## Terms
-### ACID (Attacker Controlled Input Data)
+### ACID (Attacker Controlled Input Data) tainted date
 - ACID is a term used to describe the input data that an attacker can control.
 ### Shellcode 
 - Shellcode means a piece of code that an attacker wants user to execute.
@@ -134,6 +134,27 @@ int main(int argc, char *argv[])
 - The first step in detecting a vulnerability is to read the code. This is the most important step. You need to go with the ACID flow and see if there is any place where the input is not checked. You need to look for the following.
 ## Static Analysis Tools
 - There are some tools that can help you to detect vulnerabilities. But they are not perfect. You need to use them with caution. Some times the can give you false positives or false negatives.
-
-
+- There is an analysis of this tools. The resluts are shows they are only usefull for simple examples to just accelerate the process of finding vulnerabilities.
+## Fuzzing
+- Fuzzing is a technique used to find vulnerabilities by sending random data to the program and see if it crashes. This is a very effective technique but it can be time consuming. There are some tools that can help you to do this.
+### Dum fuzzing
+- Dum fuzzing is a technique used to find vulnerabilities by sending random data to the program and see if it crashes. This is a very effective technique but it can be time consuming.
+### Template Fuzzing
+- Template fuzzing is a technique used to find vulnerabilities by sending template date to the program and see if it crashes.
+### Coverage Fuzzing
+- Coverage fuzzing is a technique used to find vulnerabilities by sending template base data and getting some feedback from the program. And trying to go to all paths of the program. 
+## Adress Sanitizer
+- Address sanitizer is a tool that can help you to detect buffer overflows. It will add some checks to the code and if the checks fail it will crash the program. This is not a complete solution but it can help you to detect some buffer overflows. But it can cause some significant performance overhead.
+- Useing address sanitizer with fuzzers is a good idea. Address sanitizer can find bugs but in order to trigger the bug you need to go to the path of the program. This is where fuzzers come in. Fuzzers can help you to go to the path of the program and trigger the bug.
+- It can not work with fortify source you should use fortify source in production and address sanitizer in development.
+# 05 Mitigation
+## Stack Canaries (Stack Cookies)
+- Stack canaries are a technique used to detect buffer overflows. They work by placing a random value (the canary) on the stack before the return address. If the canary is overwritten, the program will crash.
+- If the attacker can have full control of the stack he can skip the canary and only overwrite the return address in that case the canary will not be usefull.
+### To enable stack canaries
+``` bash
+gcc -fstack-protector-all -o stack_canary stack_canary.c
+```
+## Address Space Layout Randomization (ASLR)
+- Address space layout randomization (ASLR) is a technique used to randomize the memory addresses of the program. This makes it harder for an attacker to predict the location of the return address and other important data.
 

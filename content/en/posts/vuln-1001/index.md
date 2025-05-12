@@ -157,4 +157,9 @@ gcc -fstack-protector-all -o stack_canary stack_canary.c
 ```
 ## Address Space Layout Randomization (ASLR)
 - Address space layout randomization (ASLR) is a technique used to randomize the memory addresses of the program. This makes it harder for an attacker to predict the location of the return address and other important data.
+### By passing the ASLR
+- If the attacker have info about the some memory element and if they can read memory and find that think they can learn the ofset of the all the other elements.
+## Non-Executable Memory
+- After attacker overflow the buffer and owerwrite the return address it will jump back to the buffer to run his malicious code. When the buffer is not executable the attacker can not run his code. This is a very effective technique but it can be bypassed by using return oriented programming (ROP).
+
 

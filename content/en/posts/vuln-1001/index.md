@@ -161,5 +161,9 @@ gcc -fstack-protector-all -o stack_canary stack_canary.c
 - If the attacker have info about the some memory element and if they can read memory and find that think they can learn the ofset of the all the other elements.
 ## Non-Executable Memory
 - After attacker overflow the buffer and owerwrite the return address it will jump back to the buffer to run his malicious code. When the buffer is not executable the attacker can not run his code. This is a very effective technique but it can be bypassed by using return oriented programming (ROP).
-
-
+- This to work your OS, VMM or Frimware should support it. 
+### Write XOR Execute
+- If the memory is writeable it will not be exacutable. If the memory is executable it will not be writeable.
+## Control Flow Integrity (CFI)
+- Control flow integrity (CFI) is a technique used to ensure that the control flow of the program is not altered.
+# Heap Buffer Overflow

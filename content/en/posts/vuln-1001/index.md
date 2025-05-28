@@ -167,3 +167,12 @@ gcc -fstack-protector-all -o stack_canary stack_canary.c
 ## Control Flow Integrity (CFI)
 - Control flow integrity (CFI) is a technique used to ensure that the control flow of the program is not altered.
 # Heap Buffer Overflow
+## What is a heap buffer overflow?
+- A heap buffer overflow is a type of vulnerability that occurs when a program writes more data to a buffer on the heap than it can hold. This can lead to overwriting adjacent memory locations, including function pointers and other important data, which can allow an attacker to execute arbitrary code.
+### Common causes of heap buffer overflows
+- Using unsafe functions like `malloc`, `calloc`, and `realloc` that do not check the size of the destination buffer.
+- Sequentially data writes with in a loop with an ACID loop condition.
+# Out of Bounds Write
+## What is an out of bounds write?
+- An out of bounds write is a type of vulnerability that occurs when a program writes data to a memory location that is outside the bounds of the allocated buffer. This can lead to overwriting adjacent memory locations, including function pointers and other important data, which can allow an attacker to execute arbitrary code.
+

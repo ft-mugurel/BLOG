@@ -3,8 +3,7 @@ title: "Vuln 1001"
 date: 2025-05-06
 author: MUGUREl 
 description: 'Vuln 1001 course notes' 
-isStarred: true
----
+isStarred: true ---
 # 01 Introduction
 ## Vulnerability Types
 - Heap out of bounds
@@ -175,4 +174,5 @@ gcc -fstack-protector-all -o stack_canary stack_canary.c
 # Out of Bounds Write
 ## What is an out of bounds write?
 - An out of bounds write is a type of vulnerability that occurs when a program writes data to a memory location that is outside the bounds of the allocated buffer. This can lead to overwriting adjacent memory locations, including function pointers and other important data, which can allow an attacker to execute arbitrary code.
-
+# Integer Under and Over Flow
+## What is an out of bounds write?

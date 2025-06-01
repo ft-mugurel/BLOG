@@ -10,41 +10,53 @@ isStarred: false
 
 1. Install the linux kernel.
 ``` bash
-git clone --depth 1 --branch v6.12 https://github.com/torvalds/linux.git
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.9.tar.xz
+tar xvf linux-6.9.tar.xz
+mv linux-6.9 linux
 cd linux
 ```
 
 2. Create the default configuration file.
 ``` bash
 make defconfig
+make kvm_guest.config
 ```
 
-3. Enable the following options:
+3. Enable the following options by adding them to the `.config` file:
 ``` bash
-make menuconfig
+# Coverage collection.
+CONFIG_KCOV=y
 
-// -- the potion to enable 
-Kernel hacking  --->
-    Memory Debugging  --->
-        [*] KASAN: runtime memory debugger
-        [*]   KASAN: Generic mode
+# Debug info for symbolization.
+CONFIG_DEBUG_INFO_DWARF4=y
+
+# Memory bug detector
+CONFIG_KASAN=y
+CONFIG_KASAN_INLINE=y
+
+# Required for Debian Stretch and later
+CONFIG_CONFIGFS_FS=y
+CONFIG_SECURITYFS=y
+```
+
+Or just run the following command:
+``` bash
+echo -e "\nCONFIG_KCOV=y\nCONFIG_DEBUG_INFO_DWARF4=y\nCONFIG_KASAN=y\nCONFIG_KASAN_INLINE=y\nCONFIG_CONFIGFS_FS=y\nCONFIG_SECURITYFS=y" >> .config
+```
+
+After that you need to run this command to update the configuration:
+``` bash
+make olddefconfig
 ```
 
 4. Compile the kernel.
 ``` bash
-make -j$(nproc)
-make modules -j$(nproc)
-make INSTALL_MOD_PATH=../modroot modules_install
+make CC="gcc -std=gnu11" -j16
 ```
 
-4. Create and minimal file system
+4. Create and debootstrap.
 ``` bash
-git clone https://git.busybox.net/busybox
-cd busybox
-make defconfig
-make menuconfig // disable tc
-make -j$(nproc)
-make CONFIG_PREFIX=../modroot install
 ```
+
 # What is kernel module?
 - A kernel module is a piece of code that can be loaded into the kernel at runtime, allowing for dynamic extension of the kernel's functionality.

@@ -3,7 +3,9 @@ title: "Vuln 1001"
 date: 2025-05-06
 author: MUGUREl 
 description: 'Vuln 1001 course notes' 
-isStarred: true ---
+isStarred: true 
+---
+
 # 01 Introduction
 ## Vulnerability Types
 - Heap out of bounds

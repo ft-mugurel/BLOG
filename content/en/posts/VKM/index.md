@@ -2,7 +2,7 @@
 title: VKM
 date: 2025-04-17
 author: MUGUREl
-description: Vuln 1001 course notes
+description: VKM is a kernel module with vulnerabilityes for testing purposes.
 isStarred: false
 ---
 # Initial setup for debugging

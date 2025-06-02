@@ -6,7 +6,14 @@ description: VKM is a kernel module with vulnerabilityes for testing purposes.
 isStarred: false
 ---
 # Initial setup for debugging
-- We need an kernel with debugging enabled.
+
+1. Install the VKM project for our vurnable kernel module.
+``` bash
+git clone https://github.com/ft-mugurel/VKM.git
+cd VKM
+```
+
+- Now we need an kernel with debugging enabled.
 
 1. Install the linux kernel.
 ``` bash
@@ -17,7 +24,7 @@ cd linux
 ```
 
 2. Create the default configuration file.
-``` bash
+``` bash 
 make defconfig
 make kvm_guest.config
 ```
@@ -54,8 +61,31 @@ make olddefconfig
 make CC="gcc -std=gnu11" -j16
 ```
 
-4. Create and debootstrap.
+4. Create and debootstrap. First you need to install debootstrap for your distribution. Then run:
 ``` bash
+cd ..
+mkdir image
+cd image
+wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh
+chmod +x create-image.sh
+./create-image.sh
+cd ..
+```
+
+# Building the kernel module and runnning inside of the qemu:
+1. Build the kernel module.
+``` bash
+make build
+```
+2. Run the kernel module inside of the qemu.
+``` bash
+make loadmodule
+```
+This will upload the module in to qemu and load it into the kernel.
+
+3. To unload the module, run:
+``` bash
+make unloadmodule
 ```
 
 # What is kernel module?

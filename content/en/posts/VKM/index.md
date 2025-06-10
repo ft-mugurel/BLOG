@@ -17,9 +17,9 @@ cd VKM
 
 1. Install the linux kernel.
 ``` bash
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.9.tar.xz
-tar xvf linux-6.9.tar.xz
-mv linux-6.9 linux
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.8.tar.xz
+tar xvf linux-6.8.tar.xz
+mv linux-6.8 linux
 cd linux
 ```
 
